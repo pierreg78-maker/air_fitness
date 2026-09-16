@@ -1,0 +1,20 @@
+{
+  "id": "478",
+  "name": "4-7-8",
+  "subtitle": "Le tranquillisant naturel",
+  "emoji": "🌙",
+  "duration": "2–3 min",
+  "level": "Débutant",
+  "origin": "Andrew Weil / Pranayama",
+  "benefits": ["Sommeil", "Anxiété", "Calme", "Craving"],
+  "tags": ["#Sommeil", "#Anxiété", "#Calme", "#Débutant", "#Scientifique", "#Craving"],
+  "intentions": ["sommeil"],
+  "color": "#a78bfa",
+  "gradFrom": "#1e1b4b",
+  "gradTo": "#2e1065",
+  "description": "Méthode popularisée par le Dr Andrew Weil. L’expiration longue active fortement le système parasympathique. Idéal avant de dormir ou en cas d’anxiété.",
+  "ratio": {"inspire": 4, "hold": 7, "expire": 8, "holdEmpty": 0},
+  "intensity": {"inspire": "douce", "hold": "neutre", "expire": "longue et complète"},
+  "cycles": 4,
+  "instructions": {"inspire": "Inspire silencieusement par le nez pendant 4 comptes.", "hold": "Retiens le souffle sans forcer pendant 7 comptes.", "expire": "Expire par la bouche en faisant un léger « whoosh », vide vraiment les poumons."}
+}

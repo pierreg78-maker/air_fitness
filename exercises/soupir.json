@@ -1,0 +1,20 @@
+{
+  "id": "soupir",
+  "name": "Soupir physiologique",
+  "subtitle": "Reset express du stress",
+  "emoji": "😮‍💨",
+  "duration": "1–2 min",
+  "level": "Débutant",
+  "origin": "Physiologie / neurosciences",
+  "benefits": ["Anxiété", "Stress", "Calme", "Craving"],
+  "tags": ["#Anxiété", "#Stress", "#Calme", "#Reset", "#Débutant", "#Craving"],
+  "intentions": ["calme"],
+  "color": "#67e8f9",
+  "gradFrom": "#083344",
+  "gradTo": "#155e75",
+  "description": "Le soupir que le corps fait tout seul, rendu volontaire. Un inspire, un second petit inspire par-dessus, puis une expire longue. Trois à cinq cycles suffisent souvent.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 8, "holdEmpty": 1},
+  "intensity": {"inspire": "double, sans forcer", "expire": "longue et relâchée", "holdEmpty": "neutre"},
+  "cycles": 5,
+  "instructions": {"inspire": "Inspire par le nez, puis un second petit inspire par-dessus pour remplir le haut.", "expire": "Lâche tout par la bouche, longue expire, épaules qui descendent.", "holdEmpty": "Une pause courte. Laisse le calme arriver."}
+}
