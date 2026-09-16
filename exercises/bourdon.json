@@ -1,0 +1,20 @@
+{
+  "id": "bourdon",
+  "name": "Bourdonnement",
+  "subtitle": "Calmer par la vibration",
+  "emoji": "🐝",
+  "duration": "3–5 min",
+  "level": "Intermédiaire",
+  "origin": "Pranayama / Bhramari",
+  "benefits": ["Calme", "Anxiété", "Sommeil"],
+  "tags": ["#Calme", "#Anxiété", "#Sommeil", "#Intermédiaire", "#Yoga"],
+  "intentions": ["calme", "sommeil"],
+  "color": "#f0abfc",
+  "gradFrom": "#4a044e",
+  "gradTo": "#701a75",
+  "description": "Expire en murmurant un « mmm » grave, lèvres closes. La vibration dans le crâne occupe l’attention et ralentit le mental. Oreilles libres, mâchoire lâche. Pas juste après un repas.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 8, "holdEmpty": 0},
+  "intensity": {"inspire": "nasale, discrète", "expire": "longue, bourdon grave"},
+  "cycles": 8,
+  "instructions": {"inspire": "Inspire par le nez, visage détendu.", "expire": "Expire en bourdonnant, lèvres fermées. Sens la vibration."}
+}

@@ -1,0 +1,20 @@
+{
+  "id": "pausevide",
+  "name": "Pause à vide",
+  "subtitle": "Tolérer le creux",
+  "emoji": "🕳️",
+  "duration": "4–5 min",
+  "level": "Avancé",
+  "origin": "Respiration réduite / Buteyko adapté",
+  "benefits": ["Calme", "Anxiété", "Focus"],
+  "tags": ["#Calme", "#Anxiété", "#Focus", "#Avancé"],
+  "intentions": ["calme", "focus"],
+  "color": "#94a3b8",
+  "gradFrom": "#0f172a",
+  "gradTo": "#1e293b",
+  "description": "Après l’expire, on reste quelques comptes poumons vides. Pas d’air forcé au retour. Ça enseigne à ne pas fuir le creux — utile aussi quand une envie pousse à « remplir » (air, snack, cigarette). Stoppe si un vrai manque d’air apparaît.",
+  "ratio": {"inspire": 3, "hold": 0, "expire": 6, "holdEmpty": 4},
+  "intensity": {"inspire": "petite, jamais à bloc", "expire": "complète et douce", "holdEmpty": "calme, sans lutter"},
+  "cycles": 8,
+  "instructions": {"inspire": "Petite inspire nasale, trois comptes.", "expire": "Expire six comptes, vide vraiment.", "holdEmpty": "Quatre comptes vides. Épaules basses. L’air reviendra."}
+}

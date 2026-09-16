@@ -1,0 +1,20 @@
+{
+  "id": "levres",
+  "name": "Lèvres pincées",
+  "subtitle": "Ralentir la sortie",
+  "emoji": "💨",
+  "duration": "3–4 min",
+  "level": "Débutant",
+  "origin": "Respiration clinique / pursed-lip",
+  "benefits": ["Calme", "Anxiété", "Stress"],
+  "tags": ["#Calme", "#Anxiété", "#Stress", "#Débutant"],
+  "intentions": ["calme"],
+  "color": "#7dd3fc",
+  "gradFrom": "#0c4a6e",
+  "gradTo": "#155e75",
+  "description": "Inspire par le nez, expire par des lèvres presque fermées, comme pour faire trembler une flamme sans l’éteindre. La résistance allonge l’expire et donne un contrôle concret quand le souffle s’emballe.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 8, "holdEmpty": 0},
+  "intensity": {"inspire": "nasale, simple", "expire": "lèvres pincées, filet d’air"},
+  "cycles": 8,
+  "instructions": {"inspire": "Inspire par le nez, quatre comptes.", "expire": "Pince les lèvres. Filet d’air lent, huit comptes."}
+}

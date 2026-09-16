@@ -1,0 +1,20 @@
+{
+  "id": "frais",
+  "name": "Souffle frais",
+  "subtitle": "Refroidir le système",
+  "emoji": "❄️",
+  "duration": "2–3 min",
+  "level": "Débutant",
+  "origin": "Pranayama / Sitali",
+  "benefits": ["Calme", "Digestion", "Reset"],
+  "tags": ["#Calme", "#Digestion", "#Reset", "#Débutant", "#Yoga"],
+  "intentions": ["calme", "digestion"],
+  "color": "#a5f3fc",
+  "gradFrom": "#164e63",
+  "gradTo": "#155e75",
+  "description": "Inspire par la bouche, langue en gouttière si possible — sinon par les dents serrées. L’air arrive plus frais. Expire par le nez. Utile quand ça monte (chaleur, agitation, après table).",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 6, "holdEmpty": 0},
+  "intensity": {"inspire": "fraîche, par la langue ou les dents", "expire": "nasale, plus longue"},
+  "cycles": 8,
+  "instructions": {"inspire": "Roule la langue ou serre les dents. Inspire l’air frais.", "expire": "Ferme la bouche. Expire par le nez, six comptes."}
+}

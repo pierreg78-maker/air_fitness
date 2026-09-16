@@ -1,0 +1,20 @@
+{
+  "id": "resonance",
+  "name": "Résonance 6–6",
+  "subtitle": "Cinq cycles par minute",
+  "emoji": "🎼",
+  "duration": "5 min",
+  "level": "Intermédiaire",
+  "origin": "Recherche VFC / cohérence",
+  "benefits": ["VFC", "Stress", "Équilibre"],
+  "tags": ["#VFC", "#Stress", "#Équilibre", "#Calme", "#Intermédiaire", "#Scientifique"],
+  "intentions": ["calme"],
+  "color": "#2dd4bf",
+  "gradFrom": "#042f2e",
+  "gradTo": "#0f766e",
+  "description": "Variante un peu plus ample de la cohérence cardiaque : six comptes de chaque côté, soit ~5 cycles/min à 60 bpm. Idéale quand la 5–5 est devenue trop courte. Assis, yeux doux.",
+  "ratio": {"inspire": 6, "hold": 0, "expire": 6, "holdEmpty": 0},
+  "intensity": {"inspire": "fluide, ventre d’abord", "expire": "fluide, même durée"},
+  "cycles": 20,
+  "instructions": {"inspire": "Inspire six comptes. Pas de haut de poitrine figé.", "expire": "Expire six comptes. Continu, sans à-coup."}
+}

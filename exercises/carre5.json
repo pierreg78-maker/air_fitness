@@ -1,0 +1,20 @@
+{
+  "id": "carre5",
+  "name": "Carré 5",
+  "subtitle": "Le box un cran plus lent",
+  "emoji": "🧊",
+  "duration": "5–6 min",
+  "level": "Intermédiaire",
+  "origin": "US Navy SEALs / extension",
+  "benefits": ["Focus", "Performance", "Concentration"],
+  "tags": ["#Focus", "#Performance", "#Concentration", "#Intermédiaire"],
+  "intentions": ["focus"],
+  "color": "#38bdf8",
+  "gradFrom": "#0c4a6e",
+  "gradTo": "#0369a1",
+  "description": "Même carré que le Box Breathing, cinq comptes au lieu de quatre. Pont vers le Box allongé. Si la rétention serre, reviens au 4–4–4–4.",
+  "ratio": {"inspire": 5, "hold": 5, "expire": 5, "holdEmpty": 5},
+  "intensity": {"inspire": "régulière", "hold": "neutre", "expire": "contrôlée", "holdEmpty": "neutre"},
+  "cycles": 6,
+  "instructions": {"inspire": "Inspire cinq comptes par le nez.", "hold": "Cinq comptes. Rien ne force.", "expire": "Vide cinq comptes.", "holdEmpty": "Cinq comptes vides. Reste alerte."}
+}

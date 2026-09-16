@@ -1,0 +1,20 @@
+{
+  "id": "sos",
+  "name": "SOS 3 souffles",
+  "subtitle": "Couper la montée",
+  "emoji": "🩽",
+  "duration": "1 min",
+  "level": "Débutant",
+  "origin": "Physiologie / reset d’urgence",
+  "benefits": ["Anxiété", "Reset", "Stress"],
+  "tags": ["#Anxiété", "#Reset", "#Stress", "#Calme", "#Débutant"],
+  "intentions": ["calme"],
+  "color": "#fda4af",
+  "gradFrom": "#4c0519",
+  "gradTo": "#9f1239",
+  "description": "Trois cycles seulement. Double inspire si besoin, puis expire très longue. Pensé pour une crise qui monte dans un lieu public, au volant à l’arrêt, ou avant de répondre. Ensuite, on enchaîne un exercice plus long.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 8, "holdEmpty": 2},
+  "intensity": {"inspire": "deux temps si la poitrine est serrée", "expire": "très longue, bouche souple", "holdEmpty": "neutre"},
+  "cycles": 3,
+  "instructions": {"inspire": "Inspire par le nez. Un second petit inspire si ça bloque.", "expire": "Lâche tout par la bouche, huit comptes.", "holdEmpty": "Deux comptes vides. Pied au sol."}
+}

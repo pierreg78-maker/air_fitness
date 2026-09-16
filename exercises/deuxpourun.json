@@ -1,0 +1,20 @@
+{
+  "id": "deuxpourun",
+  "name": "2 pour 1",
+  "subtitle": "Expire double",
+  "emoji": "⚖️",
+  "duration": "4–5 min",
+  "level": "Intermédiaire",
+  "origin": "Respiration parasympathique",
+  "benefits": ["Calme", "Stress", "Anxiété"],
+  "tags": ["#Calme", "#Stress", "#Anxiété", "#Intermédiaire"],
+  "intentions": ["calme"],
+  "color": "#5eead4",
+  "gradFrom": "#134e4a",
+  "gradTo": "#115e59",
+  "description": "L’expire dure deux fois l’inspire. Ratio simple, effet net sur le tonus. Assis dos droit. Si un bâillement vient, c’est bon signe : on laisse.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 8, "holdEmpty": 0},
+  "intensity": {"inspire": "complète sans gonfler", "expire": "filée, deux fois plus longue"},
+  "cycles": 8,
+  "instructions": {"inspire": "Inspire quatre comptes par le nez.", "expire": "Expire huit comptes. Les épaules descendent toutes seules."}
+}

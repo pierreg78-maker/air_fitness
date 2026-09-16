@@ -1,0 +1,20 @@
+{
+  "id": "ocean",
+  "name": "Souffle océan",
+  "subtitle": "Un rythme pour tenir",
+  "emoji": "🌊",
+  "duration": "4–6 min",
+  "level": "Intermédiaire",
+  "origin": "Pranayama / Ujjayi",
+  "benefits": ["Focus", "Concentration", "Calme"],
+  "tags": ["#Focus", "#Concentration", "#Calme", "#Intermédiaire", "#Yoga"],
+  "intentions": ["focus", "calme"],
+  "color": "#67e8f9",
+  "gradFrom": "#083344",
+  "gradTo": "#0e7490",
+  "description": "On resserre un peu la gorge, comme pour embuer une vitre. L’air fait un souffle d’océan, inspire et expire. Ça donne un point d’attention stable, utile avant un effort mental.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 4, "holdEmpty": 0},
+  "intensity": {"inspire": "gorge un peu étroite, audible", "expire": "même souffle, même son"},
+  "cycles": 12,
+  "instructions": {"inspire": "Inspire par le nez, léger resserrement de gorge.", "expire": "Expire par le nez, même son d’océan. Reste régulier."}
+}

@@ -1,0 +1,20 @@
+{
+  "id": "vagueenvie",
+  "name": "Vague d’envie",
+  "subtitle": "Traverser le craving",
+  "emoji": "🌊",
+  "duration": "3–5 min",
+  "level": "Débutant",
+  "origin": "Urge surfing / pleine présence",
+  "benefits": ["Craving", "Calme", "Anxiété"],
+  "tags": ["#Craving", "#Calme", "#Anxiété", "#Reset", "#Débutant"],
+  "intentions": ["calme"],
+  "color": "#f9a8d4",
+  "gradFrom": "#500724",
+  "gradTo": "#9d174d",
+  "description": "Une envie de tabac, de snack, d’écran, dure rarement plus de quelques minutes. On ne discute pas avec elle : on la monte et on la descend avec le souffle, jusqu’à l’autre rive. Assis, pieds au sol. Ce n’est pas un sevrage médical — c’est un pont, une vague à la fois.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 8, "holdEmpty": 2},
+  "intensity": {"inspire": "basse, on accueille", "expire": "longue, la vague redescend", "holdEmpty": "on vérifie : l’envie est encore là ?"},
+  "cycles": 10,
+  "instructions": {"inspire": "Inspire. Nomme l’envie sans la suivre. Quatre comptes.", "expire": "Expire deux fois plus long. L’onde redescend.", "holdEmpty": "Deux comptes. Pied au sol. L’envie n’est pas un ordre."}
+}

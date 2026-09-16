@@ -1,0 +1,20 @@
+{
+  "id": "etages",
+  "name": "Trois étages",
+  "subtitle": "Remplir le corps",
+  "emoji": "📶",
+  "duration": "3–4 min",
+  "level": "Débutant",
+  "origin": "Yoga / Dirga",
+  "benefits": ["Calme", "Fondation", "Digestion"],
+  "tags": ["#Calme", "#Fondation", "#Digestion", "#Débutant"],
+  "intentions": ["calme", "digestion"],
+  "color": "#6ee7b7",
+  "gradFrom": "#022c22",
+  "gradTo": "#065f46",
+  "description": "On remplit bas-ventre, côtes, puis poitrine, et on vide dans l’autre sens. Un apprentissage du souffle complet, sans performance. Assis, une main sur le ventre.",
+  "ratio": {"inspire": 4, "hold": 0, "expire": 6, "holdEmpty": 0},
+  "intensity": {"inspire": "en trois vagues, sans forcer", "expire": "souple, du haut vers le bas"},
+  "cycles": 8,
+  "instructions": {"inspire": "Ventre, puis côtes, puis haut de poitrine. Quatre comptes.", "expire": "Poitrine, côtes, ventre. Six comptes, tout redescend."}
+}

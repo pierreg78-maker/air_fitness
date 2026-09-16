@@ -1,0 +1,20 @@
+{
+  "id": "reset90",
+  "name": "Reset craving",
+  "subtitle": "90 secondes pour ne pas céder",
+  "emoji": "🛑",
+  "duration": "1–2 min",
+  "level": "Intermédiaire",
+  "origin": "Interruption d’habitude / respiration tactique",
+  "benefits": ["Craving", "Focus", "Reset"],
+  "tags": ["#Craving", "#Focus", "#Reset", "#Anxiété", "#Intermédiaire"],
+  "intentions": ["calme", "focus"],
+  "color": "#fb7185",
+  "gradFrom": "#4c0519",
+  "gradTo": "#881337",
+  "description": "Quand la main part (paquet, frigo, téléphone), on coupe. Carré court puis expire plus longue. Assez structuré pour occuper les 90 secondes où le geste automatique se joue. Ensuite on change de pièce, on boit de l’eau. À répéter autant de fois que la vague revient.",
+  "ratio": {"inspire": 4, "hold": 2, "expire": 6, "holdEmpty": 2},
+  "intensity": {"inspire": "nette, par le nez", "hold": "courte, épaules basses", "expire": "plus longue, bouche ou nez", "holdEmpty": "on relâche les mains"},
+  "cycles": 6,
+  "instructions": {"inspire": "Inspire quatre comptes. Éloigne les mains.", "hold": "Deux comptes. Regarde un point fixe.", "expire": "Expire six comptes. Le geste n’a plus le volant.", "holdEmpty": "Deux comptes vides. Décide la suite : eau, pièce, marche."}
+}
