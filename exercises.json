@@ -87,8 +87,8 @@
       },
       "cycles": 4,
       "instructions": {
-        "inspire": "Inspire silencieusement par le nez pendant 4 comptes.",
-        "hold": "Retiens le souffle sans forcer pendant 7 comptes.",
+        "inspire": "Inspire silencieusement par le nez pendant 4 temps.",
+        "hold": "Retiens le souffle sans forcer pendant 7 temps.",
         "expire": "Expire par la bouche en faisant un léger « whoosh », vide vraiment les poumons."
       }
     },
@@ -222,7 +222,7 @@
       "cycles": 8,
       "instructions": {
         "inspire": "Inspire par le nez, comme si tu ouvrais la journée.",
-        "hold": "Garde l’air deux comptes. Visage détendu.",
+        "hold": "Garde l’air pendant deux temps. Visage détendu.",
         "expire": "Expire un peu plus court. Reste présent."
       }
     },
@@ -266,8 +266,8 @@
       },
       "cycles": 12,
       "instructions": {
-        "inspire": "Inspire net par le nez, trois comptes.",
-        "expire": "Expire net par le nez ou la bouche, trois comptes."
+        "inspire": "Inspire net par le nez, trois temps.",
+        "expire": "Expire net par le nez ou la bouche, trois temps."
       }
     },
     {
@@ -486,7 +486,7 @@
       },
       "cycles": 8,
       "instructions": {
-        "inspire": "Inspire par le nez, quatre comptes.",
+        "inspire": "Inspire par le nez, quatre temps.",
         "hold": "Garde l’air, visage détendu.",
         "expire": "Expire par le nez, même durée."
       }
@@ -556,7 +556,7 @@
       "color": "#0284c7",
       "gradFrom": "#082f49",
       "gradTo": "#0c4a6e",
-      "description": "Même carré que le Box Breathing, comptes plus longs. Ne force pas la rétention. Si la gorge serre, reviens au 4–4–4–4.",
+      "description": "Même carré que le Box Breathing, temps plus longs. Ne force pas la rétention. Si la gorge serre, reviens au 4–4–4–4.",
       "ratio": {
         "inspire": 6,
         "hold": 6,
@@ -571,10 +571,10 @@
       },
       "cycles": 5,
       "instructions": {
-        "inspire": "Inspire six comptes, ventre puis poitrine.",
-        "hold": "Six comptes. Épaules basses.",
-        "expire": "Vide six comptes.",
-        "holdEmpty": "Poumons vides, six comptes. Reste présent."
+        "inspire": "Inspire six temps, ventre puis poitrine.",
+        "hold": "Six temps. Épaules basses.",
+        "expire": "Vide six temps.",
+        "holdEmpty": "Poumons vides, six temps. Reste présent."
       }
     },
     {
@@ -615,8 +615,8 @@
       },
       "cycles": 8,
       "instructions": {
-        "inspire": "Inspire quatre comptes, sans remplir à bloc.",
-        "expire": "Expire dix comptes, comme un fil continu."
+        "inspire": "Inspire quatre temps, sans remplir à bloc.",
+        "expire": "Expire dix temps, comme un fil continu."
       }
     },
     {
@@ -747,9 +747,9 @@
       },
       "cycles": 6,
       "instructions": {
-        "inspire": "Inspire quatre comptes.",
-        "hold": "Garde quatre comptes, mâchoire lâche.",
-        "expire": "Expire huit comptes, laisse le jour partir."
+        "inspire": "Inspire quatre temps.",
+        "hold": "Garde quatre temps, mâchoire lâche.",
+        "expire": "Expire huit temps, laisse le jour partir."
       }
     },
     {
@@ -791,9 +791,9 @@
       },
       "cycles": 8,
       "instructions": {
-        "inspire": "Inspire par le nez, quatre comptes.",
-        "hold": "Sept comptes. Si c’est trop, reviens au 4-7-8 simple.",
-        "expire": "Expire huit comptes par la bouche."
+        "inspire": "Inspire par le nez, quatre temps.",
+        "hold": "Sept temps. Si c’est trop, reviens au 4-7-8 simple.",
+        "expire": "Expire huit temps par la bouche."
       }
     },
     {
@@ -873,9 +873,9 @@
       },
       "cycles": 8,
       "instructions": {
-        "inspire": "Inspire quatre comptes, vague qui monte.",
-        "hold": "Deux comptes, ventre souple.",
-        "expire": "Expire six comptes, vague qui redescend."
+        "inspire": "Inspire quatre temps, vague qui monte.",
+        "hold": "Deux temps, ventre souple.",
+        "expire": "Expire six temps, vague qui redescend."
       }
     },
     {
