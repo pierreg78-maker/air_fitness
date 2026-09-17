@@ -189,8 +189,11 @@
       background: transparent;
       border: none;
     }
-    .header-logo svg {
+       .header-logo img {
       display: block;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
     }
     .intent-row {
       display: flex;
@@ -287,7 +290,11 @@
     }
 
   </style>
+   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <link rel="manifest" href="site.webmanifest" />
   <meta name="theme-color" content="#070b14" />
 </head>
@@ -1406,8 +1413,8 @@ const t2 = setTimeout(() => setSplash(false), 4700);       // fin
                   Souffle · Présence · Santé 
                 </p>
               </div>
-              <div className="header-logo">
-                <LogoMark size={34} />
+                            <div className="header-logo">
+                <img src="apple-touch-icon.png" alt="" width="40" height="40" />
               </div>
             </div>
 
