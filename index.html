@@ -988,8 +988,21 @@ const t2 = setTimeout(() => setSplash(false), 4700);       // fin
         if (!ctx) return;
         if (ctx.state === "suspended") ctx.resume();
 
-        nextBeatTimeRef.current = ctx.currentTime + 0.12;
+                nextBeatTimeRef.current = ctx.currentTime + 0.12;
         beatQueueRef.current = [];
+
+        // Downbeat du compte déjà affiché : on sonne, on ne décrémente pas.
+        // Sans ça, le 1er temps (ex. inspire 4 d’Ancrage 4–4) ne dure que 0,12 s.
+        const first = seqRef.current[stepRef.current];
+        playBell(
+          ctx,
+          nextBeatTimeRef.current,
+          toneForPhase(first && first.phase, toneRef.current),
+          volumeRef.current
+        );
+        nextBeatTimeRef.current += 60 / (bpmRef.current || 60);
+
+        // Boucle de planification audio (25 ms de lookahead)
 
         // Boucle de planification audio (25 ms de lookahead)
         schedulerTimerRef.current = setInterval(() => {
