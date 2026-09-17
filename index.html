@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" style="background:#070b14">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -298,7 +298,29 @@
   <meta name="theme-color" content="#070b14" />
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+  <!-- Écran d'attente : peint immédiatement, sans JS, pendant le chargement de React -->
+  <div class="splash-overlay" id="staticSplash">
+    <svg width="130" height="130" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="#22d3ee" stroke-width="8" stroke-linecap="round" opacity="0.4">
+        <path d="M14.75 44 A48 48 0 0 1 105.25 44"/>
+        <path d="M105.25 76 A48 48 0 0 1 14.75 76"/>
+      </g>
+      <g stroke="#67e8f9" stroke-width="6.5" stroke-linecap="round">
+        <path d="M14.75 44 A48 48 0 0 1 105.25 44"/>
+        <path d="M105.25 76 A48 48 0 0 1 14.75 76"/>
+      </g>
+      <path d="M8 57 C22 42 38 42 54 56 C70 70 86 70 106 55" stroke="#7deaf5" stroke-width="5.5" stroke-linecap="round"/>
+      <path d="M8 70 C22 55 38 55 54 69 C70 83 86 83 106 68" stroke="#5bd4e8" stroke-width="5.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <script>
+    // Si le splash a déjà été vu dans cette session, on masque tout de suite
+    if (sessionStorage.getItem("af_splashSeen")) {
+      document.getElementById("staticSplash").style.display = "none";
+    }
+  </script>
+</div>
   <script type="text/babel">
 // ─── Récupération des hooks React ───
     const { useState, useEffect, useRef, useMemo } = React;
