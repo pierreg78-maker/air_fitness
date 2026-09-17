@@ -87,8 +87,8 @@
       },
       "cycles": 4,
       "instructions": {
-        "inspire": "Inspire silencieusement par le nez pendant 4 comptes.",
-        "hold": "Retiens le souffle sans forcer pendant 7 comptes.",
+        "inspire": "Inspire silencieusement par le nez pendant 4 temps.",
+        "hold": "Retiens le souffle sans forcer pendant 7 temps.",
         "expire": "Expire par la bouche en faisant un léger « whoosh », vide vraiment les poumons."
       }
     },
@@ -222,7 +222,7 @@
       "cycles": 8,
       "instructions": {
         "inspire": "Inspire par le nez, comme si tu ouvrais la journée.",
-        "hold": "Garde l’air deux comptes. Visage détendu.",
+        "hold": "Garde l’air deux temps. Visage détendu.",
         "expire": "Expire un peu plus court. Reste présent."
       }
     },
@@ -266,8 +266,8 @@
       },
       "cycles": 12,
       "instructions": {
-        "inspire": "Inspire net par le nez, trois comptes.",
-        "expire": "Expire net par le nez ou la bouche, trois comptes."
+        "inspire": "Inspire net par le nez, trois temps.",
+        "expire": "Expire net par le nez ou la bouche, trois temps."
       }
     },
     {
@@ -486,7 +486,7 @@
       },
       "cycles": 8,
       "instructions": {
-        "inspire": "Inspire par le nez, quatre comptes.",
+        "inspire": "Inspire par le nez, quatre temps.",
         "hold": "Garde l’air, visage détendu.",
         "expire": "Expire par le nez, même durée."
       }
