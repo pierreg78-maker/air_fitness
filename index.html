@@ -26,6 +26,8 @@
     }
 
     html { scroll-behavior: smooth; }
+        /* Ancre sous la nav sticky, après le séparateur */
+    .anchor { scroll-margin-top: 72px; }
 
     body {
       background: var(--bg);
@@ -230,12 +232,12 @@
           <path d="M8 57 C22 42 38 42 54 56 C70 70 86 70 106 55" stroke="#7deaf5" stroke-width="5.5" stroke-linecap="round"/>
           <path d="M8 70 C22 55 38 55 54 69 C70 83 86 83 106 68" stroke="#5bd4e8" stroke-width="5.5" stroke-linecap="round"/>
         </svg>
-        <strong>AIR&nbsp;FITNESS</strong>
+        <strong>Air&nbsp;Fitness</strong>
       </a>
       <div class="nav-links">
         <a href="#bienfaits">Bienfaits</a>
         <a href="#installer">Installer</a>
-        <a class="nav-cta" href="app.html">Ouvrir l'appli →</a>
+        <a class="nav-cta" href="app.html">Ouvrir l'app →</a>
       </div>
     </div>
   </nav>
@@ -267,7 +269,7 @@
     <h1 class="anim" style="animation-delay: 0.5s">«Le souffle est le pont qui relie <em>la vie à la conscience</em>.» <h3 class="anim" style="animation-delay: 0.7s">Thich Nhat Hanh</h3></h1>
     <br>
     <div class="hero-actions anim" style="animation-delay: 1s">
-      <a class="btn-primary" href="app.html">Ouvrir l'appli.</a>
+      <a class="btn-primary" href="app.html">Ouvrir l'appli</a>
       <a class="btn-ghost" href="#installer">📲 L'installer</a>
     </div>
 
@@ -283,13 +285,14 @@
   </header>
 
   <!-- ═══ Bienfaits ═══ -->
-  <section id="bienfaits" class="container">
+    <section class="container">
+    <div id="bienfaits" class="anchor"></div>
     <p class="section-label reveal">Pourquoi respirer consciemment ?</p>
     <h3 class="section-title reveal">Parce que la respiration influence notre physiologie, nos performances et nos émotions.</h3>
     <p class="section-intro reveal">
       Tu respires 20 000 fois par jour sans y penser. En dirigeant volontairement
       ce souffle, tu dialogues directement avec ton système nerveux. La science
-      le confirme, ton corps le sait déjà. <br>Comment ça marche ? Pour quels bienfaits ? 
+      le confirme, ton corps le sait déjà. <br>Comment ça marche ? Quels sont les bienfaits ? 
     </p>
 
     <div class="grid-2">
@@ -341,8 +344,9 @@
     
 
   <!-- ═══ L'app ═══ -->
-  <section id="app" class="container">
+    <section class="container">
     <p class="text-white 10px">------------</p>
+    <div id="app" class="anchor"></div>
     <p class="section-label reveal">L'application</p>
     <h2 class="section-title reveal">Complète et pratique</h2>
     <p class="section-intro reveal"> Des dizaines d'exercices variés, couvrant les besoins de chacun tout au long de la journée. Chaque exercice est accompagné de ses instructions, parfois de définitions, et guidé phase par phase. On trie les exercices à l'aide de <em>filtres</em> intuitifs.
@@ -390,9 +394,10 @@
   </section>
 
   <!-- ═══ Installation ═══ -->
-  <section id="installer" class="container">
+   <section class="container">
     <p class="text-white 10px">------------</p>
-    <div class="install-panel reveal">
+    <div id="installer" class="anchor"></div>
+    <div class="install-panel reveal">            
       <p class="section-label">Télécharger</p>
       <h2 class="section-title">Emporte Air Fitness partout</h2>
       <p class="section-intro" style="margin: 0 auto 8px">
