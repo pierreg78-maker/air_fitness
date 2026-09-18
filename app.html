@@ -88,7 +88,7 @@
 }
 .splash-brand {
   position: absolute;
-  left: 25%;
+  left: 50%;
   top: 66%;
   opacity: 0;
   color: #67e8f9;
@@ -100,13 +100,13 @@
 }
 .splash-tagline {
   position: absolute;
-  left: 25%;
+  left: 50%;
   top: 72%;
   opacity: 0;
   transform: translateX(-50%);
   color: #7dd3fc99;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 9px;
+  letter-spacing: 0.1em;
   animation: taglineUp 0.8s 1.8s ease-out forwards;
   white-space: wrap;
 }
@@ -1417,42 +1417,42 @@ const t2 = setTimeout(() => setSplash(false), 4700);       // fin
         );
       }
 
-      // ─── Écran d’accueil ───
-      return (
-        <div
-          className="min-h-screen bg-[#070b14] flex flex-col"
-          style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-        >
-         {splash && (
-  <div className={splashLeaving ? "splash-overlay leaving" : "splash-overlay"}>
-    <div className="splash-dark" />
-    <div className="splash-content">
-      <div className="splash-heart">
-        <div className="splash-grow">
-          <SplashLogo />
+     // ─── Écran d'accueil ───
+return (
+  <div
+    className="min-h-screen bg-[#070b14] flex flex-col"
+    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+  >
+    {splash && (
+      <div className={splashLeaving ? "splash-overlay leaving" : "splash-overlay"}>
+        <div className="splash-dark" />
+        <div className="splash-content">
+          <div className="splash-heart">
+            <div className="splash-grow">
+              <SplashLogo />
+              <p className="splash-brand">Bienvenue sur l'app Air Fitness</p>
+              <p className="splash-tagline">Souffle & Bien-être</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div)
-    
-       
-      <p className="splash-brand">Bienvenue sur l'app Air Fitness</p>
-      <p className="splash-tagline">Souffle & Bien-être</p>
+    )}
+
+    <div className="flex-1 overflow-y-auto pb-28">
+      <div className="px-5 pt-12 pb-1 flex items-center justify-between">
+        <img src="apple-touch-icon.png" alt="Logo Air Fitness" width="40" height="40" />
+        <h1 className="text-[22px] font-semibold text-white tracking-tight">
+          Air Fitness
+        </h1>
+      </div>
+      <p className="text-slate-500 text-xs mt-0.5">
+        Souffle & Bien-être
+      </p>
+
+
     </div>
   </div>
-)}
-          <div className="flex-1 overflow-y-auto pb-28">
-            <div className="px-5 pt-12 pb-1 flex items-center justify-between">
-             <img src="apple-touch-icon.png" alt="Logo Air Fitness" width="40" height="40" />
-             <h1 className="text-[22px] font-semibold text-white tracking-tight">
-                  Air Fitness
-                </h1>
-              </div> 
-                <p className="text-slate-500 text-xs mt-0.5">
-                  Souffle & Bien-être
-              </p>
-              </div>         
-            </div>
-
+);
                         {/* Super-filtres d’intention */}
             <div className="px-5 mt-5">
               <div className="border-l-2 border-dotted border-[#E53935] pl-3.5">
