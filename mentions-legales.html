@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions légales — Air Fitness</title>
+  <meta name="description" content="Mentions légales, confidentialité et avertissement santé d'Air Fitness." />
+  <meta name="theme-color" content="#070b14" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #070b14;
+      --card: #0f1524;
+      --border: #1a2236;
+      --cyan: #22d3ee;
+      --cyan-soft: #67e8f9;
+      --indigo: #818cf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --faint: #64748b;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+    }
+    .glow-bg {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 50% -100px, #164e6333, transparent),
+        radial-gradient(ellipse 500px 400px at 85% 110%, #312e8122, transparent);
+    }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      background: #070b14e6;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #141b2d;
+    }
+    .nav-inner {
+      max-width: 720px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand strong { color: #fff; font-size: 15px; letter-spacing: 0.08em; }
+    .nav-inner a.back { color: var(--faint); text-decoration: none; font-size: 13px; }
+    .nav-inner a.back:hover { color: var(--cyan-soft); }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; position: relative; z-index: 1; }
+    .label {
+      color: var(--cyan); font-size: 11px; letter-spacing: 0.25em;
+      text-transform: uppercase; font-weight: 600; margin-bottom: 10px;
+    }
+    h1 { color: #fff; font-size: clamp(26px, 5vw, 34px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .lead { color: var(--muted); margin-bottom: 36px; }
+    h2 {
+      color: #fff; font-size: 18px; font-weight: 600;
+      margin: 36px 0 12px; padding-top: 8px;
+    }
+    p, li { color: var(--muted); font-size: 15px; }
+    p + p { margin-top: 12px; }
+    ul { margin: 8px 0 0 18px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--cyan-soft); }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 18px 20px; margin: 16px 0;
+    }
+    .card strong { color: #fff; font-weight: 600; }
+    .hint { color: var(--faint); font-size: 13px; }
+    footer { border-top: 1px solid #141b2d; padding: 28px 24px 40px; text-align: center; position: relative; z-index: 1; }
+    footer p { color: var(--faint); font-size: 12.5px; }
+  </style>
+</head>
+<body>
+  <div class="glow-bg"></div>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <svg width="26" height="26" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <g stroke="#67e8f9" stroke-width="6.5" stroke-linecap="round">
+            <path d="M14.75 44 A48 48 0 0 1 105.25 44"/>
+            <path d="M105.25 76 A48 48 0 0 1 14.75 76"/>
+          </g>
+          <path d="M8 57 C22 42 38 42 54 56 C70 70 86 70 106 55" stroke="#7deaf5" stroke-width="5.5" stroke-linecap="round"/>
+          <path d="M8 70 C22 55 38 55 54 69 C70 83 86 83 106 68" stroke="#5bd4e8" stroke-width="5.5" stroke-linecap="round"/>
+        </svg>
+        <strong>AIR&nbsp;FITNESS</strong>
+      </a>
+      <a class="back" href="index.html">← Accueil</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <p class="label">Informations légales</p>
+    <h1>Mentions légales</h1>
+    <p class="lead">Air Fitness est un projet personnel, gratuit et non commercial. Cette page dit qui publie le site, où il est hébergé, ce qui est fait de tes données, et les limites de l’outil.</p>
+
+    <h2>1. Éditeur</h2>
+    <p>Le site et l’application Air Fitness sont édités à titre <strong style="color:#fff">non professionnel</strong>, dans le cadre d’un projet passion, sans activité commerciale (pas de vente, pas d’abonnement, pas de publicité).</p>
+    <div class="card">
+      <p><strong>Nom public :</strong> Pierre</p>
+      <p><strong>Compte de publication :</strong> <a href="https://github.com/pierreg78-maker">github.com/pierreg78-maker</a></p>
+      <p><strong>Dépôt :</strong> <a href="https://github.com/pierreg78-maker/air_fitness">github.com/pierreg78-maker/air_fitness</a></p>
+      <p><strong>Contact :</strong> via les discussions ou issues du dépôt GitHub.</p>
+    </div>
+    <p>Éditeur non professionnel d’un service de communication au public en ligne. L’identité complète est destinée à l’hébergeur, conformément à la LCEN (loi n° 2004-575 du 21 juin 2004, art. 1-1).</p>
+
+    <h2>2. Directeur de la publication</h2>
+    <p>Pierre, éditeur du projet Air Fitness.</p>
+
+    <h2>3. Hébergeur</h2>
+    <p>Le site est hébergé par <strong style="color:#fff">GitHub Pages</strong>, service de GitHub :</p>
+    <div class="card">
+      <p><strong>GitHub, Inc.</strong><br>
+      88 Colin P. Kelly Jr. Street<br>
+      San Francisco, CA 94107<br>
+      États-Unis</p>
+      <p style="margin-top:12px"><strong>GitHub B.V.</strong> (établissement européen)<br>
+      Prins Bernhardplein 200<br>
+      1097 JB Amsterdam<br>
+      Pays-Bas</p>
+      <p style="margin-top:12px">Site : <a href="https://github.com">github.com</a><br>
+      Documentation Pages : <a href="https://docs.github.com/pages">docs.github.com/pages</a><br>
+      Confidentialité GitHub : <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité</a></p>
+    </div>
+
+    <h2>4. Nature du service</h2>
+    <p>Air Fitness est une application web de guidage d’exercices de respiration, accessible gratuitement depuis un navigateur, installable sur l’écran d’accueil (PWA).</p>
+    <ul>
+      <li>Aucun compte n’est créé.</li>
+      <li>Aucun paiement n’est demandé.</li>
+      <li>Aucune publicité n’est affichée par l’éditeur.</li>
+    </ul>
+    <p>Adresse publique habituelle :<br>
+    <a href="https://pierreg78-maker.github.io/air_fitness/">https://pierreg78-maker.github.io/air_fitness/</a></p>
+
+    <h2>5. Avertissement santé</h2>
+    <p>Air Fitness propose des techniques de respiration destinées au grand public. <strong style="color:#fff">Ce n’est ni un dispositif médical, ni un acte de soin, ni un substitut à l’avis d’un professionnel de santé.</strong></p>
+    <p>En cas de pathologie respiratoire, cardiaque ou psychologique, de grossesse, de traitement en cours, ou simplement de doute, demande un avis médical avant de pratiquer — surtout les exercices soutenus, de rétention ou d’hyperventilation volontaire.</p>
+    <p>Interromps l’exercice dès un malaise, des vertiges, une douleur ou une gêne inhabituelle.</p>
+
+    <h2>6. Données personnelles</h2>
+    <p>L’éditeur d’Air Fitness <strong style="color:#fff">ne crée pas de compte</strong>, n’ouvre pas de fiche utilisateur et <strong style="color:#fff">n’envoie pas</strong> ton journal, tes séries ou tes réglages vers un serveur qui lui appartiendrait.</p>
+    <p>Ce qui peut exister localement, dans ton navigateur uniquement (stockage local), par exemple :</p>
+    <ul>
+      <li>le tempo du métronome ;</li>
+      <li>l’exercice du jour ;</li>
+      <li>le journal de sessions et la série.</li>
+    </ul>
+    <p>Ces informations restent sur l’appareil. Pour les effacer : données de navigation du site, dans les réglages du navigateur.</p>
+    <p>L’éditeur n’utilise pas, de son côté, de cookies publicitaires ni d’outil d’audience type Google Analytics.</p>
+    <p>En revanche, <strong style="color:#fff">GitHub Pages</strong> est un service tiers. Lors d’une visite, l’hébergeur peut enregistrer des données techniques (par exemple une adresse IP) pour des motifs de sécurité et de fonctionnement, selon sa propre politique. L’éditeur n’a pas la maîtrise de ces journaux.</p>
+    <p>Si un formulaire de contact, une mesure d’audience ou un compte apparaissaient, cette page serait mise à jour avant.</p>
+    <p class="hint">Projet personnel : pas de DPO désigné. Question : issues du dépôt GitHub.</p>
+
+    <h2>7. Propriété intellectuelle</h2>
+    <p>La présentation « Air Fitness », le monogramme (cercle ouvert et ondes), les textes de la page d’accueil, la structure du catalogue et le code du dépôt suivent la licence du projet (MIT pour le logiciel, fichier <a href="https://github.com/pierreg78-maker/air_fitness/blob/main/LICENSE">LICENSE</a>).</p>
+    <p>Les noms d’exercices issus de pratiques diffusées (Box Breathing, 4-7-8, cohérence cardiaque, etc.) appartiennent à l’usage commun de ces méthodes. Leur présentation ici n’implique aucune affiliation.</p>
+    <p>Merci de ne pas republier l’application à l’identique sous un autre nom, ni de laisser croire qu’il s’agit d’un service de santé.</p>
+
+    <h2>8. Responsabilité</h2>
+    <p>Le site est proposé « en l’état », sans garantie de disponibilité ni de résultat. L’éditeur s’efforce de maintenir des consignes claires ; il ne peut être tenu responsable d’une mauvaise pratique, d’une interruption de GitHub Pages, ou d’un usage non adapté à ta situation.</p>
+
+    <h2>9. Droit applicable</h2>
+    <p>Le site s’adresse en priorité à un public francophone. Pour tout litige relatif à son édition, le droit français s’applique, sous réserve des règles impératives éventuellement plus favorables.</p>
+
+    <p class="hint" style="margin-top:36px">Dernière mise à jour : 18 septembre 2026. Page d’information, pas une consultation juridique.</p>
+  </main>
+
+  <footer>
+    <p>Air Fitness — Souffle · Présence · Santé</p>
+    <p style="margin-top:8px"><a href="index.html" style="color:#67e8f9;text-decoration:none">Accueil</a>
+      · <a href="app.html" style="color:#67e8f9;text-decoration:none">Application</a></p>
+  </footer>
+</body>
+</html>
