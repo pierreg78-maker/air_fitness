@@ -26,7 +26,6 @@
     }
 
     html { scroll-behavior: smooth; }
-        /* Ancre sous la nav sticky, après le séparateur */
     .anchor { scroll-margin-top: 88px; }
 
     body {
@@ -37,7 +36,6 @@
       overflow-x: hidden;
     }
 
-    /* ─── Halo d'ambiance ─── */
     .glow-bg {
       position: fixed;
       inset: 0;
@@ -50,7 +48,6 @@
 
     .container { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    /* ─── Nav ─── */
     nav {
       position: sticky; top: 0; z-index: 20;
       background: #070b14e6;
@@ -81,19 +78,19 @@
       box-shadow: 0 4px 16px #0ea5e940;
     }
 
-    /* ─── Hero ─── */
     .hero {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: clamp(8px, 1.6vh, 22px);
+      justify-content: flex-start;
+      gap: clamp(4px, 1.1vh, 14px);
       box-sizing: border-box;
       min-height: calc(100svh - 76px);
       min-height: calc(100dvh - 76px);
-      padding: 12px 0 28px;
+      padding: 10px 0 18px;
     }
+    header.hero > br { display: none; }
     .hero-logo svg { width: 130px; height: 130px; display: block; margin: 0 auto; }
     .hero h1 {
       font-size: clamp(25px, 6vw, 46px);
@@ -103,7 +100,7 @@
     .hero h1 em { font-style: normal; color: var(--cyan-soft); }
     .hero .tagline {
       color: var(--indigo); font-size: 11px; letter-spacing: 0.35em;
-      text-transform: uppercase; margin-bottom: 22px;
+      text-transform: uppercase; margin-bottom: 6px;
     }
     .hero p.sub {
       color: var(--muted); max-width: 480px; margin: 0 auto 34px; font-size: 16px;
@@ -132,9 +129,9 @@
     .anim { opacity: 0; animation: fadeUp 0.8s ease-out forwards; }
 
     .breath-demo {
-      margin: clamp(8px, 2.4vh, 36px) auto 0;
-      width: min(210px, 42vw, 28vh);
-      height: min(210px, 42vw, 28vh);
+      margin: 2px auto 0;
+      width: min(188px, 40vw, 22vh);
+      height: min(188px, 40vw, 22vh);
       position: relative; display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
@@ -155,7 +152,8 @@
     .breath-out { color: #5bd4e8; animation: labelOut 10s ease-in-out infinite; }
     @keyframes labelIn  { 0% {opacity:1} 45% {opacity:1} 50% {opacity:0} 95% {opacity:0} 100% {opacity:1} }
     @keyframes labelOut { 0% {opacity:0} 45% {opacity:0} 50% {opacity:1} 95% {opacity:1} 100% {opacity:0} }
-    .breath-hint { text-align: center; color: var(--faint); font-size: 12px; margin-top: -1px; }
+    .breath-hint { text-align: center; color: var(--faint); font-size: 12px; margin-top: 4px; flex-shrink: 0; }
+    .breath-hint h4 { font-size: 13px; font-weight: 500; color: var(--faint); }
 
     section { padding: 60px 0; }
     .section-label {
@@ -221,12 +219,14 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-height: 760px) {
-      .hero-logo svg { width: 100px; height: 100px; }
-      .hero h1 { margin: 8px 0 4px; }
+      .hero-logo svg { width: 96px; height: 96px; }
+      .hero h1 { margin: 6px 0 2px; }
+      .breath-demo { width: min(160px, 36vw, 20vh); height: min(160px, 36vw, 20vh); }
     }
-    @media (max-height: 640px) {
+    @media (max-height: 700px) {
       .hero-logo svg { width: 78px; height: 78px; }
-      .hero { gap: 6px; padding: 8px 0 16px; }
+      .hero { gap: 4px; padding: 6px 0 12px; }
+      .breath-demo { width: 140px; height: 140px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -297,7 +297,7 @@
       </div>
      </div>
     <div class="anim" style="animation-delay: 1.9s" aria-hidden="true">
-      <div class="breath-hint" style="margin-top: 5px"><h4>Démo: cohérence cardiaque 5-5</h4></div>
+      <div class="breath-hint" style="margin-top: 2px"><h4>Démo: cohérence cardiaque 5-5</h4></div>
     </div>
   </header>
 
@@ -498,7 +498,6 @@
       const isIOS = /iphone|ipad|ipod/i.test(ua) ||
         (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
       const isAndroid = /android/i.test(ua);
-      const isDesktop = !isIOS && !isAndroid;
 
       const id = isIOS ? "card-ios" : isAndroid ? "card-android" : "card-desktop";
       const card = document.getElementById(id);
