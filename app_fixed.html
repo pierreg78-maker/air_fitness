@@ -1206,11 +1206,13 @@
           style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
         >
           {/* Header fixe, HORS du conteneur scrollable */}
-          <div className="px-5 pt-1 pb-1 flex items-center justify-between">
+          <div className="px-5 pt-1 pb-1 flex items-center justify-evenly">
             <h1 className="text-[22px] font-semibold text-white tracking-tight">
               Air Fitness
             </h1>
-            <img
+            <span a className="text-slate-500 text-xs mt-0.1 px-5">
+            Souffle & Bien-être</a>
+              <img
               src="apple-touch-icon.png"
               alt="Logo Air Fitness"
               width="40"
@@ -1218,9 +1220,7 @@
               className="header-logo"
             />
           </div>
-          <p className="text-slate-500 text-xs mt-0.5 px-5">
-            Souffle & Bien-être
-          </p>
+
 
           {/* Contenu scrollable */}
           <div className="flex-1 overflow-y-auto pb-28">
