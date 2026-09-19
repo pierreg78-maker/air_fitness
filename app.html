@@ -19,13 +19,19 @@
       background: #070b14;
       font-family: system-ui, -apple-system, sans-serif;
     }
-    #root {
-      max-width: 480px;
-      margin: 0 auto;
-      background: #070b14;
-      min-height: 100vh;
-      position: relative;
-    }
+    html, body {
+  height: 100%;
+  overflow: hidden;
+}
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #070b14;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
+}
     .term-mark {
       border-bottom: 1px dotted #eab30899;
       cursor: help;
@@ -327,28 +333,7 @@ function playBell(ctx, time, tone, volume) {
     else if (tone === "aigue") { freq1 = 1174; freq2 = 1760; }
     else if (tone === "vide") { freq1 = 262; freq2 = 392; }
     const dur = 0.55;
-    osc1.frequency.setValueAtTime(freq1, time);
-    osc2.frequency.setValueAtTime(freq2, time);
-    gainNode.gain.setValueAtTime(0, time);
-    gainNode.gain.linearRampToValueAtTime(volume, time + 0.004);
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, time + dur);
-    osc1.start(time); osc1.stop(time + dur);
-    osc2.start(time); osc2.stop(time + dur);
-  } catch (e) {}
-}
-
-        osc1.frequency.setValueAtTime(freq1, time);
-        osc2.frequency.setValueAtTime(freq2, time);
-
-        gainNode.gain.setValueAtTime(0, time);
-        gainNode.gain.linearRampToValueAtTime(volume, time + 0.005);
-        gainNode.gain.exponentialRampToValueAtTime(0.0001, time + 1.5);
-
-        osc1.start(time);
-        osc1.stop(time + 1.5);
-        osc2.start(time);
-        osc2.stop(time + 1.5);
-      } catch (e) {}
+    } catch (e) {}
     }
 
     function Term({ defKey, ratioLabel, children }) {
@@ -1205,7 +1190,7 @@ function playBell(ctx, time, tone, volume) {
       // ─── Écran d'accueil ───
       return (
         <div
-          className="min-h-screen bg-[#070b14] flex flex-col"
+          className="h-full max-h-full flex flex-col overflow-hidden bg-[#070b14]"
           style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
         >
           {/* Header fixe, HORS du conteneur scrollable */}
@@ -1213,7 +1198,7 @@ function playBell(ctx, time, tone, volume) {
             <h1 className="text-[18px] font-semibold text-white tracking-tight">
               Air Fitness
             </h1>
-            <span class="text-slate-400 text-lg px-5">
+            <span className="text-slate-400 text-lg px-5">
             Souffle & Bien-être</span>
               <img
               src="favicon-48x48.png"
@@ -1226,7 +1211,7 @@ function playBell(ctx, time, tone, volume) {
 
 
           {/* Contenu scrollable */}
-          <div className="flex-1 overflow-y-auto pb-22">
+          <div className="flex-1 min-h-0 overflow-y-auto pb-28">
             {/* Super-filtres d’intention */}
             <div className="px-5 mt-4">
               <div className="border-l-2 border-dotted border-[#E53935] pl-3.5">
