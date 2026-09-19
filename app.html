@@ -581,68 +581,7 @@
       }
       return seq;
     }
-// ═══════════════════════════════════════════════════════════════════
-// SPLASH — logo animé (cercle qui se dessine + ondes tourbillonnantes)
-// ═══════════════════════════════════════════════════════════════════
-function SplashLogo() {
-  return (
-    <svg width="150" height="150" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-      <defs>
-        <filter id="splashHalo" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="2.5" />
-        </filter>
-      </defs>
 
-      {/* Cercle ouvert gauche/droite */}
-      <g filter="url(#splashHalo)" stroke="#22d3ee" strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.4">
-        <path d={MARK.ringTop}
-              strokeDasharray="166" strokeDashoffset="166"
-              style={{ animation: "drawRing 1.1s 0.2s ease-out forwards" }} />
-        <path d={MARK.ringBot}
-              strokeDasharray="166" strokeDashoffset="166"
-              style={{ animation: "drawRing 1.1s 0.2s ease-out forwards" }} />
-      </g>
-      <g stroke="#67e8f9" strokeWidth="6.5" strokeLinecap="round" fill="none">
-        <path d={MARK.ringTop}
-              strokeDasharray="166" strokeDashoffset="166"
-              style={{ animation: "drawRing 1.1s 0.2s ease-out forwards" }} />
-        <path d={MARK.ringBot}
-              strokeDasharray="166" strokeDashoffset="166"
-              style={{ animation: "drawRing 1.1s 0.2s ease-out forwards" }} />
-      </g>
-
-      {/* Vague inspire */}
-      <path d={MARK.wave1}
-            stroke="#7deaf5" strokeWidth="5.5" strokeLinecap="round" fill="none"
-            strokeDasharray="150" strokeDashoffset="150"
-            style={{ animation: "drawWave 1.4s 0.9s ease-out forwards" }} />
-      {/* Vague expire */}
-      <path d={MARK.wave2}
-            stroke="#5bd4e8" strokeWidth="5.5" strokeLinecap="round" fill="none"
-            strokeDasharray="150" strokeDashoffset="150"
-            style={{ animation: "drawWave 1.4s 1.15s ease-out forwards" }} />
-    </svg>
-  );
-}
-function Splash() {
-  return (
-    <div className="splash-overlay">
-      <SplashLogo />
-      <p
-        className="text-slate-400 text-xs tracking-[0.45em] uppercase"
-        style={{ animation: "taglineUp 0.8s 1.2s ease-out both" }}
-      >
-        Air&nbsp;Fitness
-      </p>
-      <p
-        className="text-indigo-300/40 text-[10px] tracking-[0.2em]"
-        style={{ animation: "taglineUp 0.8s 1.6s ease-out both" }}
-      >
-        Souffle & Bien-être 
-      </p>
-    </div>
-  );
-}
     
     // ─── Composant principal ───
     function AirFitness() {
@@ -661,20 +600,7 @@ function Splash() {
         const n = Number(saved);
         return n >= 30 && n <= 250 ? n : 60;
       });
-      // ─── Splash : une seule fois par session ───
-const [splash, setSplash] = useState(
-  () => !sessionStorage.getItem("af_splashSeen")
-);
-const [splashLeaving, setSplashLeaving] = useState(false);
-
-useEffect(() => {
-  if (!splash) return;
-  sessionStorage.setItem("af_splashSeen", "1");
- const t1 = setTimeout(() => setSplashLeaving(true), 4100); // début du fondu
-const t2 = setTimeout(() => setSplash(false), 4700);       // fin
-  return () => { clearTimeout(t1); clearTimeout(t2); };
-}, [splash]);
-      
+          
       const [tone, setTone] = useState(() => store.get("af_tone", "mix"));
       const [volume, setVolume] = useState(() => {
         const v = Number(store.get("af_volume", 0.7));
