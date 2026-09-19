@@ -15,6 +15,117 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* ─── Splash screen ─── */
+@keyframes splashFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes splashFadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes splashLogoIn {
+  from { opacity: 0; transform: scale(0.82); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes splashTextIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes splashLoader {
+  from { transform: translateX(-110%); }
+  to   { transform: translateX(420%); }
+}
+
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 42%, #10162b 0%, #070b14 70%);
+  animation: splashFadeIn 0.4s ease-out;
+}
+.splash-overlay.leaving {
+  animation: splashFadeOut 0.65s ease-in forwards;
+  pointer-events: none;
+}
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6vh;
+}
+.splash-logo {
+  animation: splashLogoIn 0.9s 0.15s cubic-bezier(0.22, 0.9, 0.3, 1) both;
+  filter: drop-shadow(0 0 26px rgba(34, 211, 238, 0.25));
+}
+.splash-welcome {
+  margin-top: 26px;
+  color: #94a3b8;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  animation: splashTextIn 0.7s 0.7s ease-out both;
+}
+.splash-title {
+  margin-top: 8px;
+  color: #f8fafc;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 24px rgba(103, 232, 249, 0.35);
+  animation: splashTextIn 0.7s 1s ease-out both;
+}
+.splash-tagline {
+  margin-top: 10px;
+  color: #67e8f9aa;
+  font-size: 12.5px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  animation: splashTextIn 0.7s 1.3s ease-out both;
+}
+.splash-loader {
+  margin-top: 34px;
+  width: 120px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(148, 163, 184, 0.15);
+  overflow: hidden;
+  animation: splashTextIn 0.6s 1.5s ease-out both;
+}
+.splash-loader span {
+  display: block;
+  width: 34%;
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+  animation: splashLoader 1.4s ease-in-out infinite;
+}
+
+/* ─── Vagues du logo : relais alterné gauche ↔ droite ─── */
+.af-wave {
+  stroke-dasharray: 70 200;  /* 70 d'impulsion, 200 de silence = 1 seule impulsion visible */
+  stroke-dashoffset: 70;     /* impulsion rangée avant le début du tracé = invisible */
+}
+.af-wave-a { animation: afSweepLR 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+.af-wave-b {
+  animation: afSweepRL 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation-delay: -2.2s;    /* démarre à mi-cycle : prend le relais de l'autre */
+}
+@keyframes afSweepLR {        /* gauche → droite */
+  0%   { stroke-dashoffset: 70; }
+  44%  { stroke-dashoffset: -200; }  /* sortie à droite, disparaît */
+  100% { stroke-dashoffset: -200; }  /* reste invisible jusqu'au prochain tour */
+}
+@keyframes afSweepRL {        /* droite → gauche */
+  0%   { stroke-dashoffset: -200; }
+  44%  { stroke-dashoffset: 70; }
+  100% { stroke-dashoffset: 70; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-overlay * { animation-duration: 0.01s !important; animation-delay: 0s !important; }
+}
+
+    
     body {
       background: #070b14;
       font-family: system-ui, -apple-system, sans-serif;
@@ -402,27 +513,35 @@ function playBell(ctx, time, tone, volume) {
       wave2: "M 8 70 C 22 55, 38 55, 54 69 C 70 83, 86 83, 106 68",
     };
 
-    function LogoMark({ color = "#67e8f9", glowColor = "#22d3ee", size = 28 }) {
-      const uid = "logoHalo";
-      return (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none" aria-hidden="true">
-          <defs>
-            <filter id={uid} x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="2.5" />
-            </filter>
-          </defs>
-          <g filter={`url(#${uid})`} stroke={glowColor} strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.4">
-            <path d={MARK.ringTop} />
-            <path d={MARK.ringBot} />
-          </g>
-          <g stroke={color} strokeWidth="6.5" strokeLinecap="round" fill="none">
-            <path d={MARK.ringTop} />
-            <path d={MARK.ringBot} />
-          </g>
-          <path d={MARK.wave1} stroke="#7deaf5" strokeWidth="5.5" strokeLinecap="round" fill="none" />
-          <path d={MARK.wave2} stroke="#5bd4e8" strokeWidth="5.5" strokeLinecap="round" fill="none" />
-        </svg>
-      );
+   function LogoMark({ color = "#67e8f9", glowColor = "#22d3ee", size = 28, animated = false }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <defs>
+        <filter id="logoHalo" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="2.5" />
+        </filter>
+      </defs>
+      <g filter="url(#logoHalo)" stroke={glowColor} strokeWidth="8" strokeLinecap="round" fill="none" opacity="0.4">
+        <path d={MARK.ringTop} />
+        <path d={MARK.ringBot} />
+      </g>
+      <g stroke={color} strokeWidth="6.5" strokeLinecap="round" fill="none">
+        <path d={MARK.ringTop} />
+        <path d={MARK.ringBot} />
+      </g>
+      {animated && ( /* traces fantômes : la "piste" des impulsions */
+        <g fill="none" strokeLinecap="round">
+          <path d={MARK.wave1} stroke="#7deaf5" strokeWidth="5.5" opacity="0.18" />
+          <path d={MARK.wave2} stroke="#5bd4e8" strokeWidth="5.5" opacity="0.18" />
+        </g>
+      )}
+      <path d={MARK.wave1} stroke="#7deaf5" strokeWidth="5.5" strokeLinecap="round" fill="none"
+        className={animated ? "af-wave af-wave-a" : undefined} />
+      <path d={MARK.wave2} stroke="#5bd4e8" strokeWidth="5.5" strokeLinecap="round" fill="none"
+        className={animated ? "af-wave af-wave-b" : undefined} />
+    </svg>
+  );
+}
     }
 
     // ═══════════════════════════════════════════════════════════════════
@@ -587,6 +706,50 @@ function playBell(ctx, time, tone, volume) {
       }
       return seq;
     }
+    
+    function Splash({ onDone, duration = 3000 }) {
+  const rootRef = useRef(null);
+  const doneRef = useRef(false);
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const show = reduced ? 500 : duration;
+    const fade = reduced ? 0 : 700;
+    const t1 = setTimeout(() => {
+      if (rootRef.current) rootRef.current.classList.add("leaving");
+    }, show);
+    const t2 = setTimeout(() => {
+      if (!doneRef.current) { doneRef.current = true; onDone(); }
+    }, show + fade);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []); // eslint-disable-line
+
+  return (
+    <div className="splash-overlay" ref={rootRef} role="status" aria-label="Chargement d’Air Fitness">
+      <div className="splash-inner">
+        <div className="splash-logo">
+          <LogoMark size={128} animated />
+        </div>
+        <p className="splash-welcome">Bienvenue sur</p>
+        <h1 className="splash-title">Air Fitness</h1>
+        <p className="splash-tagline">l’application souffle &amp; bien-être</p>
+        <div className="splash-loader"><span /></div>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [splashDone, setSplashDone] = useState(false);
+  return (
+    <>
+      {!splashDone && <Splash onDone={() => setSplashDone(true)} />}
+      <AirFitness />
+    </>
+  );
+}
+
+    
     // ─── Composant principal ───
     function AirFitness() {
       const [tab, setTab] = useState("home");
@@ -1489,7 +1652,7 @@ function playBell(ctx, time, tone, volume) {
     // ─── Rendu ───
     const root = ReactDOM.createRoot(document.getElementById("root"));
     loadExercises()
-      .then(() => root.render(<AirFitness />))
+      .then(() => root.render(<app />))
       .catch((err) => {
         console.error(err);
         document.getElementById("root").innerHTML =
