@@ -303,36 +303,39 @@
       }
     }
 
-    function toneForPhase(phase, toneMode) {
-      if (toneMode !== "mix") return toneMode || "standard";
-      if (phase === "inspire") return "aigue";
-      if (phase === "hold") return "standard";
-      if (phase === "expire") return "grave";
-      return "grave";
-    }
+   function toneForPhase(phase, toneMode) {
+  if (toneMode !== "mix") return toneMode || "standard";
+  if (phase === "inspire") return "aigue";
+  if (phase === "hold") return "standard";
+  if (phase === "expire") return "grave";
+  if (phase === "holdEmpty") return "vide";
+  return "grave";
+}
 
-    function playBell(ctx, time, tone, volume) {
-      try {
-        const osc1 = ctx.createOscillator();
-        const osc2 = ctx.createOscillator();
-        const gainNode = ctx.createGain();
-
-        osc1.connect(gainNode);
-        osc2.connect(gainNode);
-        gainNode.connect(ctx.destination);
-
-        osc1.type = "sine";
-        osc2.type = "sine";
-
-        let freq1 = 880;
-        let freq2 = 1200;
-        if (tone === "grave") {
-          freq1 = 440;
-          freq2 = 600;
-        } else if (tone === "aigue") {
-          freq1 = 1500;
-          freq2 = 2100;
-        }
+function playBell(ctx, time, tone, volume) {
+  try {
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+    osc1.connect(gainNode);
+    osc2.connect(gainNode);
+    gainNode.connect(ctx.destination);
+    osc1.type = "sine";
+    osc2.type = "sine";
+    let freq1 = 880, freq2 = 1320;
+    if (tone === "grave") { freq1 = 392; freq2 = 588; }
+    else if (tone === "aigue") { freq1 = 1174; freq2 = 1760; }
+    else if (tone === "vide") { freq1 = 262; freq2 = 392; }
+    const dur = 0.55;
+    osc1.frequency.setValueAtTime(freq1, time);
+    osc2.frequency.setValueAtTime(freq2, time);
+    gainNode.gain.setValueAtTime(0, time);
+    gainNode.gain.linearRampToValueAtTime(volume, time + 0.004);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+    osc1.start(time); osc1.stop(time + dur);
+    osc2.start(time); osc2.stop(time + dur);
+  } catch (e) {}
+}
 
         osc1.frequency.setValueAtTime(freq1, time);
         osc2.frequency.setValueAtTime(freq2, time);
