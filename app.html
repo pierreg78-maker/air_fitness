@@ -60,10 +60,10 @@
       font-weight: 600;
     }
     .header-logo {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       flex-shrink: 0;
-      display: block;
+      display: inline;
       align-items: center;
       justify-content: center;
       background: transparent;
@@ -581,8 +581,6 @@
       }
       return seq;
     }
-
-    
     // ─── Composant principal ───
     function AirFitness() {
       const [tab, setTab] = useState("home");
@@ -600,7 +598,6 @@
         const n = Number(saved);
         return n >= 30 && n <= 250 ? n : 60;
       });
-          
       const [tone, setTone] = useState(() => store.get("af_tone", "mix"));
       const [volume, setVolume] = useState(() => {
         const v = Number(store.get("af_volume", 0.7));
@@ -1202,25 +1199,24 @@
         );
       }
 
-     // ─── Écran d'accueil ───
-return (
-  <div
-    className="min-h-screen bg-[#070b14] flex flex-col"
-    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-    <div className="flex-1 overflow-y-auto pb-28">
-      <div className="px-5 pt-12 pb-1 flex items-center justify-between">
-        <h1 className="text-[22px] font-semibold text-white tracking-tight">
-          Air Fitness
-        </h1>
-        <img src="apple-touch-icon.png" alt="Logo Air Fitness" width="40" height="40" />
-        <p className="text-slate-500 text-xs mt-0.5">
-        Souffle & Bien-être
-      </p>
-     </div>
-    </div>
-  </div>
-);
-                        {/* Super-filtres d’intention */}
+      // ─── Écran d'accueil ───
+      return (
+        <div
+          className="min-h-screen bg-[#070b14] flex flex-col"
+          style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+        >
+          <div className="flex-1 overflow-y-auto pb-28">
+            <div className="px-5 pt-12 pb-1 flex items-center justify-between">
+              <img src="apple-touch-icon.png" alt="Logo Air Fitness" width="40" height="40" />
+              <h1 className="text-[22px] font-semibold text-white tracking-tight">
+                Air Fitness
+              </h1>
+            </div>
+            <p className="text-slate-500 text-xs mt-0.5 px-5">
+              Souffle & Bien-être
+            </p>
+
+            {/* Super-filtres d’intention */}
             <div className="px-5 mt-5">
               <div className="border-l-2 border-dotted border-[#E53935] pl-3.5">
                 <p className="text-slate-400 text-[13px] mb-2.5">
