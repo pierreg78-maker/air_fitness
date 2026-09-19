@@ -516,6 +516,16 @@ function playBell(ctx, time, tone, volume) {
     };
 
    function LogoMark({ color = "#67e8f9", glowColor = "#22d3ee", size = 28, animated = false }) {
+  const waveARef = useRef(null);
+  const waveBRef = useRef(null);
+
+  useEffect(() => {
+    if (!animated || !waveARef.current) return;
+    const L = Math.ceil(waveARef.current.getTotalLength()); // longueur réelle du tracé (~110)
+    waveARef.current.style.setProperty("--wave-len", L);
+    waveBRef.current.style.setProperty("--wave-len", L);
+  }, [animated]);
+
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" fill="none" aria-hidden="true">
       <defs>
@@ -537,9 +547,9 @@ function playBell(ctx, time, tone, volume) {
           <path d={MARK.wave2} stroke="#5bd4e8" strokeWidth="5.5" opacity="0.18" />
         </g>
       )}
-      <path d={MARK.wave1} stroke="#7deaf5" strokeWidth="5.5" strokeLinecap="round" fill="none"
+      <path ref={waveARef} d={MARK.wave1} stroke="#7deaf5" strokeWidth="5.5" strokeLinecap="round" fill="none"
         className={animated ? "af-wave af-wave-a" : undefined} />
-      <path d={MARK.wave2} stroke="#5bd4e8" strokeWidth="5.5" strokeLinecap="round" fill="none"
+      <path ref={waveBRef} d={MARK.wave2} stroke="#5bd4e8" strokeWidth="5.5" strokeLinecap="round" fill="none"
         className={animated ? "af-wave af-wave-b" : undefined} />
     </svg>
   );
