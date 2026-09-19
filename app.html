@@ -100,24 +100,26 @@
   animation: splashLoader 1.4s ease-in-out infinite;
 }
 
-/* ─── Vagues du logo : relais alterné gauche ↔ droite ─── */
+/* ─── Vagues du logo : relais alterné gauche ↔ droite, sans temps mort ─── */
 .af-wave {
-  stroke-dasharray: 70 70;  /* 70 d'impulsion, 200 de silence = 1 seule impulsion visible */
-  stroke-dashoffset: 70;     /* impulsion rangée avant le début du tracé = invisible */
+  stroke-dasharray: 70 200;  /* impulsion de 70 + long silence : une seule visible à la fois */
+  stroke-dashoffset: 70;     /* impulsion garée avant le début du tracé = invisible */
 }
-.af-wave-a { animation: afSweepLR 3.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+.af-wave-a {
+  animation: afSweepLR 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
 .af-wave-b {
-  animation: afSweepRL 3.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-  animation-delay: -1.8s;    /* démarre à mi-cycle : prend le relais de l'autre */
+  animation: afSweepRL 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation-delay: -2.2s;    /* décalée d'une demi-boucle : relais pile à la sortie de l'autre */
 }
-@keyframes afSweepLR {        /* gauche → droite */
+@keyframes afSweepLR {       /* gauche → droite sur la 1ʳᵉ moitié, puis parking invisible */
   0%   { stroke-dashoffset: 70; }
-  50%  { stroke-dashoffset: -70; }  /* sortie à droite, disparaît */
-  100% { stroke-dashoffset: -70; }  /* reste invisible jusqu'au prochain tour */
+  50%  { stroke-dashoffset: calc(-1 * var(--wave-len, 110)); }
+  100% { stroke-dashoffset: calc(-1 * var(--wave-len, 110)); }
 }
-@keyframes afSweepRL {        /* droite → gauche */
-  0%   { stroke-dashoffset: -70; }
- 50%  { stroke-dashoffset: 70; }
+@keyframes afSweepRL {       /* droite → gauche */
+  0%   { stroke-dashoffset: calc(-1 * var(--wave-len, 110)); }
+  50%  { stroke-dashoffset: 70; }
   100% { stroke-dashoffset: 70; }
 }
 
