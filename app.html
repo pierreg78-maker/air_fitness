@@ -740,25 +740,46 @@ function playBell(ctx, time, tone, volume) {
 }
 
 function App() {
-  // 1ʳᵉ ligne : au lancement, on vérifie si le splash a déjà été vu
+  // Splash seulement s'il n'a jamais été vu
   const [splashDone, setSplashDone] = useState(() => !!localStorage.getItem("af_seen"));
+  const [dataReady, setDataReady] = useState(false);
+  const [loadError, setLoadError] = useState(null);
+
+  // Le chargement des exercices se fait PENDANT le splash
+  useEffect(() => {
+    loadExercises()
+      .then(() => setDataReady(true))
+      .catch((err) => {
+        console.error(err);
+        setLoadError(err.message || "Erreur de chargement");
+      });
+  }, []);
+
+  function handleSplashDone() {
+    localStorage.setItem("af_seen", "1");
+    setSplashDone(true);
+  }
+
+  if (loadError) {
+    return (
+      <div className="h-full flex items-center justify-center">
+        <p style={{ color: "#94a3b8", padding: 24 }}>
+          Catalogue introuvable. Vérifie exercises.json.
+        </p>
+      </div>
+    );
+  }
+
+  // L'app s'affiche quand les données sont prêtes ET que le splash est terminé
+  const showApp = dataReady && splashDone;
 
   return (
     <>
-      {/* 2ᵉ ligne : quand le splash se termine, on mémorise qu'il a été vu */}
-      {!splashDone && (
-        <Splash
-          onDone={() => {
-            localStorage.setItem("af_seen", "1");
-            setSplashDone(true);
-          }}
-        />
-      )}
-      <AirFitness />
+      {!showApp && <Splash onDone={handleSplashDone} />}
+      {showApp && <AirFitness />}
     </>
   );
 }
-
     
     // ─── Composant principal ───
     function AirFitness() {
@@ -1660,14 +1681,7 @@ function App() {
     }
 
     // ─── Rendu ───
-    const root = ReactDOM.createRoot(document.getElementById("root"));
-    loadExercises()
-      .then(() => root.render(<App />))
-      .catch((err) => {
-        console.error(err);
-        document.getElementById("root").innerHTML =
-          '<p style="color:#94a3b8;padding:24px">Catalogue introuvable. Vérifie exercises.json.</p>';
-      });
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
   </script>
 </body>
