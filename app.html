@@ -174,7 +174,18 @@
       background: #22d3ee;
       cursor: pointer;
     }
-
+html, body, #root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+#root *::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
   </style>
    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
