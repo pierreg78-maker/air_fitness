@@ -740,10 +740,20 @@ function playBell(ctx, time, tone, volume) {
 }
 
 function App() {
-  const [splashDone, setSplashDone] = useState(false);
+  // 1ʳᵉ ligne : au lancement, on vérifie si le splash a déjà été vu
+  const [splashDone, setSplashDone] = useState(() => !!localStorage.getItem("af_seen"));
+
   return (
     <>
-      {!splashDone && <Splash onDone={() => setSplashDone(true)} />}
+      {/* 2ᵉ ligne : quand le splash se termine, on mémorise qu'il a été vu */}
+      {!splashDone && (
+        <Splash
+          onDone={() => {
+            localStorage.setItem("af_seen", "1");
+            setSplashDone(true);
+          }}
+        />
+      )}
       <AirFitness />
     </>
   );
