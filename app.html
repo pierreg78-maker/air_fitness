@@ -102,27 +102,28 @@
 
 /* ─── Vagues du logo : relais alterné gauche ↔ droite, sans temps mort ─── */
 .af-wave {
-  stroke-dasharray: 70 200;  /* impulsion de 70 + long silence : une seule visible à la fois */
-  stroke-dashoffset: 70;     /* impulsion garée avant le début du tracé = invisible */
+  stroke-dasharray: 70 200;
+  stroke-dashoffset: 70px;   /* impulsion garée avant le tracé = invisible */
 }
 .af-wave-a {
   animation: afSweepLR 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 .af-wave-b {
   animation: afSweepRL 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-  animation-delay: -2.2s;    /* décalée d'une demi-boucle : relais pile à la sortie de l'autre */
+  animation-delay: -2.2s;    /* toujours la moitié de la durée */
 }
-@keyframes afSweepLR {       /* gauche → droite sur la 1ʳᵉ moitié, puis parking invisible */
-  0%   { stroke-dashoffset: 70; }
-  50%  { stroke-dashoffset: calc(-1 * var(--wave-len, 112)); }
-  100% { stroke-dashoffset: calc(-1 * var(--wave-len, 112)); }
+@keyframes afSweepLR {       /* gauche → droite, sortie pile à 50 % */
+  0%   { stroke-dashoffset: 70px; }
+  50%  { stroke-dashoffset: var(--wave-out, -110px); }
+  100% { stroke-dashoffset: var(--wave-out, -110px); }
 }
 @keyframes afSweepRL {       /* droite → gauche */
-  0%   { stroke-dashoffset: calc(-1 * var(--wave-len, 112)); }
-  50%  { stroke-dashoffset: 70; }
-  100% { stroke-dashoffset: 70; }
+  0%   { stroke-dashoffset: var(--wave-out, -110px); }
+  50%  { stroke-dashoffset: 70px; }
+  100% { stroke-dashoffset: 70px; }
 }
 
+    
 @media (prefers-reduced-motion: reduce) {
   .splash-overlay * { animation-duration: 0.01s !important; animation-delay: 0s !important; }
 }
@@ -522,8 +523,8 @@ function playBell(ctx, time, tone, volume) {
   useEffect(() => {
     if (!animated || !waveARef.current) return;
     const L = Math.ceil(waveARef.current.getTotalLength()); // longueur réelle du tracé (~110)
-    waveARef.current.style.setProperty("--wave-len", L);
-    waveBRef.current.style.setProperty("--wave-len", L);
+     waveARef.current.style.setProperty("--wave-out", `-${L}px`);
+  waveBRef.current.style.setProperty("--wave-out", `-${L}px`);
   }, [animated]);
 
   return (
