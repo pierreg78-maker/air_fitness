@@ -1,6 +1,6 @@
 # Air Fitness
 
-**Souffle · Présence · Santé**
+**Souffle et Bien-être**
 
 Application web de respiration consciente. Gratuite, sans compte, 100 % privée.
 
