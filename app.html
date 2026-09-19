@@ -1652,7 +1652,7 @@ function App() {
     // ─── Rendu ───
     const root = ReactDOM.createRoot(document.getElementById("root"));
     loadExercises()
-      .then(() => root.render(<app />))
+      .then(() => root.render(<App />))
       .catch((err) => {
         console.error(err);
         document.getElementById("root").innerHTML =
