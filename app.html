@@ -102,7 +102,7 @@
 
 /* ─── Vagues du logo : relais alterné gauche ↔ droite ─── */
 .af-wave {
-  stroke-dasharray: 70 200;  /* 70 d'impulsion, 210 de silence = 1 seule impulsion visible */
+  stroke-dasharray: 70 140;  /* 70 d'impulsion, 200 de silence = 1 seule impulsion visible */
   stroke-dashoffset: 70;     /* impulsion rangée avant le début du tracé = invisible */
 }
 .af-wave-a { animation: afSweepLR 2.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
@@ -112,11 +112,11 @@
 }
 @keyframes afSweepLR {        /* gauche → droite */
   0%   { stroke-dashoffset: 70; }
-  50%  { stroke-dashoffset: -200; }  /* sortie à droite, disparaît */
-  100% { stroke-dashoffset: -200; }  /* reste invisible jusqu'au prochain tour */
+  50%  { stroke-dashoffset: -140; }  /* sortie à droite, disparaît */
+  100% { stroke-dashoffset: -140; }  /* reste invisible jusqu'au prochain tour */
 }
 @keyframes afSweepRL {        /* droite → gauche */
-  0%   { stroke-dashoffset: -200; }
+  0%   { stroke-dashoffset: -140; }
  50%  { stroke-dashoffset: 70; }
   100% { stroke-dashoffset: 70; }
 }
