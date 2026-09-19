@@ -344,8 +344,15 @@ function playBell(ctx, time, tone, volume) {
     else if (tone === "aigue") { freq1 = 1174; freq2 = 1760; }
     else if (tone === "vide") { freq1 = 262; freq2 = 392; }
     const dur = 0.55;
-    } catch (e) {}
-    }
+    osc1.frequency.setValueAtTime(freq1, time);
+    osc2.frequency.setValueAtTime(freq2, time);
+    gainNode.gain.setValueAtTime(0, time);
+    gainNode.gain.linearRampToValueAtTime(volume, time + 0.004);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+    osc1.start(time); osc1.stop(time + dur);
+    osc2.start(time); osc2.stop(time + dur);
+  } catch (e) {}
+}
 
     function Term({ defKey, ratioLabel, children }) {
       const [open, setOpen] = useState(false);
